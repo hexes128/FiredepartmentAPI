@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\hexes128\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\hexes128\\.nuget\\packages"
+    ]
+  }
+}

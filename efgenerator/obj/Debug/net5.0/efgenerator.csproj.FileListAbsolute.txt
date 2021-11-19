@@ -1,0 +1,16 @@
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\bin\Debug\net5.0\efgenerator.exe
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\bin\Debug\net5.0\efgenerator.deps.json
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\bin\Debug\net5.0\efgenerator.runtimeconfig.json
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\bin\Debug\net5.0\efgenerator.runtimeconfig.dev.json
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\bin\Debug\net5.0\efgenerator.dll
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\bin\Debug\net5.0\ref\efgenerator.dll
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\bin\Debug\net5.0\efgenerator.pdb
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\obj\Debug\net5.0\efgenerator.csproj.AssemblyReference.cache
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\obj\Debug\net5.0\efgenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\obj\Debug\net5.0\efgenerator.AssemblyInfoInputs.cache
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\obj\Debug\net5.0\efgenerator.AssemblyInfo.cs
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\obj\Debug\net5.0\efgenerator.csproj.CoreCompileInputs.cache
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\obj\Debug\net5.0\efgenerator.dll
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\obj\Debug\net5.0\ref\efgenerator.dll
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\obj\Debug\net5.0\efgenerator.pdb
+C:\Users\hexes128\source\repos\Firedepartment\efgenerator\obj\Debug\net5.0\efgenerator.genruntimeconfig.cache

@@ -1,0 +1,16 @@
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\bin\Debug\net5.0\FiredepartmentConsole.exe
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\bin\Debug\net5.0\FiredepartmentConsole.deps.json
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\bin\Debug\net5.0\FiredepartmentConsole.runtimeconfig.json
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\bin\Debug\net5.0\FiredepartmentConsole.runtimeconfig.dev.json
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\bin\Debug\net5.0\FiredepartmentConsole.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\bin\Debug\net5.0\ref\FiredepartmentConsole.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\bin\Debug\net5.0\FiredepartmentConsole.pdb
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\obj\Debug\net5.0\FiredepartmentConsole.csproj.AssemblyReference.cache
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\obj\Debug\net5.0\FiredepartmentConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\obj\Debug\net5.0\FiredepartmentConsole.AssemblyInfoInputs.cache
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\obj\Debug\net5.0\FiredepartmentConsole.AssemblyInfo.cs
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\obj\Debug\net5.0\FiredepartmentConsole.csproj.CoreCompileInputs.cache
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\obj\Debug\net5.0\FiredepartmentConsole.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\obj\Debug\net5.0\ref\FiredepartmentConsole.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\obj\Debug\net5.0\FiredepartmentConsole.pdb
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentConsole\obj\Debug\net5.0\FiredepartmentConsole.genruntimeconfig.cache

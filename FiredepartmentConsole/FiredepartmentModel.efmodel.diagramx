@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eFModelDiagrams>
+<eFModelDiagram dslVersion="1.0.0.0" Id="1c074e53-eb97-4c9e-97fb-7613742f880d" type="Sawczyn.EFDesigner.EFModel.EFModelDiagram" absoluteBounds="0, 0, 11, 8.5" name="FiredepartmentModel">
+  <modelRootMoniker Id="cba47279-0950-4257-bb2c-e4d5e72a52a4" />
+  <nestedChildShapes>
+    <classShape Id="5b89d8c0-9b73-4a09-bb05-20e2c8611d3e" absoluteBounds="5.6458334922790527, 1.6770833730697632, 1.5, 1.6987683105468752" fillColor="0, 122, 204" textColor="White" outlineColor="Black" outlineDashStyle="Solid" outlineThickness="0.01">
+      <modelClassMoniker Id="61a68144-5d4d-4117-a927-3d4eae405d35" />
+      <relativeChildShapes />
+      <nestedChildShapes>
+        <elementListCompartment Id="a483f628-08b5-4293-a41c-5709b5f8b6d9" absoluteBounds="5.6608334922790524, 1.9870833730697632, 1.4700000000000002, 0.792510986328125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dde20540-b048-4885-9270-74954278434d" absoluteBounds="5.6608334922790524, 2.7895943593978885, 1.4700000000000002, 0.238128662109375" name="AssociationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="58bcf550-d7f5-4e0c-86d1-0a0fed2d67d6" absoluteBounds="5.6608334922790524, 3.0377230215072633, 1.4700000000000002, 0.238128662109375" name="SourcesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</eFModelDiagram>
+</eFModelDiagrams>

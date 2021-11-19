@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Authentication;
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<dl>
+
+
+    @foreach (var claim in User.Claims)
+    {
+
+
+        <dt> @claim.Type</dt>
+        <dt>@claim.Value</dt>
+    }
+
+</dl>
+
+    <h2>Properties</h2>>
+
+
+<dl>
+
+
+    @foreach (var prop in (await Context.AuthenticateAsync()).Properties.Items) { 
+    
+            <dt>@prop.Key</dt>
+            
+            <dd>@prop.Value</dd>
+
+    
+    }
+
+</dl>
+
+<a  asp-controller="Home" asp-action="Logout" >Logout</a>
+    
+
