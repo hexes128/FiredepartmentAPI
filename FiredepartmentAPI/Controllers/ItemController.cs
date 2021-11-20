@@ -428,20 +428,39 @@ namespace FiredepartmentAPI.Controllers
 
                 var inventoryrecord = Context.InventoryItemsTable.Where(x => x.ItemId.Equals(fireitem.ItemId)).ToList();
                 inventoryrecord.ForEach(x => Context.InventoryItemsTable.Remove(x));
-               inventorydelete = await Context.SaveChangesAsync();
+                inventorydelete = await Context.SaveChangesAsync();
 
                 var statusrecord = Context.StatusChangeTable.Where(x => x.ItemId.Equals(fireitem.ItemId)).ToList();
 
                 statusrecord.ForEach(x => Context.StatusChangeTable.Remove(x));
 
-                 statusdelete = await Context.SaveChangesAsync();
+                statusdelete = await Context.SaveChangesAsync();
             }
 
 
-            return Ok("編輯"+edit+"盤點刪除"+ inventorydelete+"狀態刪除"+ statusdelete);
+            return Ok("編輯" + edit + "盤點刪除" + inventorydelete + "狀態刪除" + statusdelete);
         }
 
 
+        [HttpPost]
+        public async Task<IActionResult> addplace([FromBody] PlaceModel input)
+        {
 
+            var place = new PlaceModel {
+                PlaceName = input.PlaceName,
+
+                todaysend = false,
+
+                PriorityList = input.PriorityList
+            };
+
+
+            Context.PlaceTable.Add(place);
+
+            int count = await Context.SaveChangesAsync();
+
+            return Ok(count);
+
+        }
     }
 }
