@@ -44,30 +44,30 @@ namespace FiredepartmentAPI
             services.AddAuthentication("Bearer").AddJwtBearer(option => {
                 option.RequireHttpsMetadata = false;
 
-                option.Authority = "http://192.168.10.152:4000";
+                option.Authority = "http://140.133.78.44:82";
 
                 option.TokenValidationParameters = new TokenValidationParameters {
 
                     ValidateAudience = false
                 };
-            
+
             }
 
 
-            
-                    
+
+
                 );
-            services.AddAuthorization(option=> {
-                
+            services.AddAuthorization(option => {
+
                 option.AddPolicy("API", builder => {
 
                     builder.RequireAuthenticatedUser();
                     builder.RequireClaim("scope", "API");
                 });
-            
+
             });
 
-          
+
             services.AddMailKit(config => {
                config.UseMailKit(Configuration.GetSection("Email").Get<MailKitOptions>());
             });

@@ -19,7 +19,7 @@ namespace FiredepartmentAPI.Dbcontext
         public DbSet<StatusChangeModel> StatusChangeTable { get; set; }
         public DbSet<PriorityModel> PriorityTable { get; set; }
         public DbSet<PlaceModel> PlaceTable { get; set; }
-
+        public DbSet<editinforecord> EditinforecordTable { get; set; }
 
         public FiredepartmentDbContext(DbContextOptions<FiredepartmentDbContext> options) : base(options)
         {

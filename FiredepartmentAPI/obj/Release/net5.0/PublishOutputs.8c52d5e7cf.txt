@@ -4,6 +4,7 @@ C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\FiredepartmentAPI.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\FiredepartmentAPI.runtimeconfig.json
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\FiredepartmentAPI.pdb
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\MailKit.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
@@ -17,11 +18,19 @@ C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\MimeKit.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\NETCore.MailKit.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\BouncyCastle.Crypto.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\Spire.Doc.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\Spire.License.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\Spire.Pdf.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\System.Diagnostics.DiagnosticSource.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\System.Runtime.Caching.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\ThoughtWorks.QRCode.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\zxing.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\PubTmp\Out\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll

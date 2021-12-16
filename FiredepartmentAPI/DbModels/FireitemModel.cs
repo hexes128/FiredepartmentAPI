@@ -16,6 +16,7 @@ namespace FiredepartmentAPI.DbModels
         public int InventoryStatus { get; set; }
         [JsonIgnore]
         public int StoreId { get; set; }
+        public string postscript { get; set; }
         [JsonIgnore]
         public PriorityModel PriorityRef { get; set; }
         [JsonIgnore]

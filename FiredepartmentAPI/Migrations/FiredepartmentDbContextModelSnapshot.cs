@@ -36,6 +36,9 @@ namespace FiredepartmentAPI.Migrations
                     b.Property<int>("StoreId")
                         .HasColumnType("int");
 
+                    b.Property<string>("postscript")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ItemId");
 
                     b.HasIndex("StoreId");
@@ -170,6 +173,39 @@ namespace FiredepartmentAPI.Migrations
                     b.HasIndex("PlaceId");
 
                     b.ToTable("StatusChangeTable");
+                });
+
+            modelBuilder.Entity("FiredepartmentAPI.DbModels.editinforecord", b =>
+                {
+                    b.Property<int>("editid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("ChangeDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("itemid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("newname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("newstore")
+                        .HasColumnType("int");
+
+                    b.Property<string>("oldname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("oldstore")
+                        .HasColumnType("int");
+
+                    b.HasKey("editid");
+
+                    b.ToTable("EditinforecordTable");
                 });
 
             modelBuilder.Entity("FiredepartmentAPI.DbModels.FireitemModel", b =>

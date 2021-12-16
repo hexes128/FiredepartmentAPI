@@ -110,3 +110,12 @@ C:\Users\Administrator\Desktop\Firedepartment\FiredepartmentAPI\obj\Release\net5
 C:\Users\Administrator\Desktop\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\FiredepartmentAPI.pdb
 C:\Users\Administrator\Desktop\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\FiredepartmentAPI.genruntimeconfig.cache
 C:\Users\Administrator\Desktop\Firedepartment\FiredepartmentAPI\obj\Release\net5.0\FiredepartmentAPI.csproj.AssemblyReference.cache
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\bin\Release\net5.0\MailKit.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\bin\Release\net5.0\MimeKit.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\bin\Release\net5.0\NETCore.MailKit.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\bin\Release\net5.0\BouncyCastle.Crypto.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\bin\Release\net5.0\Spire.Doc.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\bin\Release\net5.0\Spire.License.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\bin\Release\net5.0\Spire.Pdf.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\bin\Release\net5.0\ThoughtWorks.QRCode.dll
+C:\Users\hexes128\source\repos\Firedepartment\FiredepartmentAPI\bin\Release\net5.0\zxing.dll

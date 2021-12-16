@@ -41,17 +41,19 @@ namespace FiredepartmentAPI.Controllers
         }
 
         [HttpGet]
-        //[Authorize("API")]
+        [Authorize("API")]
         public IActionResult GetItem()
         {
 
 
-            var items = Context.PlaceTable.Include(x => x.PriorityList).ThenInclude(x => x.FireitemList).ToArray();
+            var items = Context.PlaceTable.Include(x => x.PriorityList).
+                ThenInclude(x => x.FireitemList).ToArray();
 
 
             return Ok(items);
         }
         [HttpPost]
+        [Authorize("API")]
         public async Task<IActionResult> ChangeStatus([FromBody] List<StatusChangeinput> changeModels)
         {
             var date = DateTime.Now;
@@ -78,7 +80,7 @@ namespace FiredepartmentAPI.Controllers
         }
 
         [HttpGet]
-
+        [Authorize("API")]
         public IActionResult ChangeStatusRecord()
         {
             var record = Context.PlaceTable.Include(x => x.StatusChangeList).ThenInclude(x => x.FireitemRef);
@@ -87,7 +89,7 @@ namespace FiredepartmentAPI.Controllers
         }
 
         [HttpPost]
-        //[Authorize("API")]
+        [Authorize("API")]
         public async Task<IActionResult> Inventory([FromBody] InventoryInput input)
         {
 
@@ -133,7 +135,7 @@ namespace FiredepartmentAPI.Controllers
             return Ok(new { inventory = inventorycount, changecount = statuschangecount });
         }
 
-
+        [Authorize("API")]
         public IActionResult Inventoryrecord()
         {
 
@@ -143,7 +145,7 @@ namespace FiredepartmentAPI.Controllers
             return Ok(record);
 
         }
-
+        [Authorize("API")]
         public IActionResult InventoryItemrecord(int inventoryid)
         {
 
@@ -160,23 +162,32 @@ namespace FiredepartmentAPI.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> additem([FromBody] Fireiteminput input)
+        [Authorize("API")]
+        public async Task<IActionResult> additem([FromBody] List< Fireiteminput> input)
         {
+            input.ForEach(item => {
 
-            var fireitem = new FireitemModel {
-                ItemId = DateTime.Now.ToString("yyyyMMddHHmmssfff"),
-                ItemName = input.ItemName,
-                PresentStatus = 0,
-                InventoryStatus = 5,
-                StoreId = input.StoreId
-            };
-            Context.FireitemsTable.Add(fireitem);
+                var fireitem = new FireitemModel {
+                    ItemId = DateTime.Now.ToString("yyyyMMddHHmmssfff" + input.IndexOf(item)),
+                    ItemName = item.ItemName,
+                    postscript = item.postscript,
+                    PresentStatus = 0,
+                    InventoryStatus = 5,
+                    StoreId = item.StoreId
+                };
+                Context.FireitemsTable.Add(fireitem);
+            });
+
+          
+          
             int count = await Context.SaveChangesAsync();
-            return Ok(count);
+            return Ok("成功新增"+ count+"項設備");
 
 
         }
+
         [HttpGet]
+        [Authorize("API")]
         public IActionResult Placeinfo()
         {
 
@@ -187,6 +198,7 @@ namespace FiredepartmentAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize("API")]
         public async Task<IActionResult> generatecode()
         {
             var items = Context.PlaceTable.Include(x => x.PriorityList).ThenInclude(x => x.FireitemList).ToList();
@@ -302,11 +314,14 @@ namespace FiredepartmentAPI.Controllers
 
 
         [HttpGet]
+        //[Authorize("API")]
         public async Task<IActionResult> generatecodewithoutsave(string email)
         {
+            
+            
             var items = Context.PlaceTable.Include(x => x.PriorityList).ThenInclude(x => x.FireitemList).ToList();
 
-
+        
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\Barcode";
             try {
                 Directory.CreateDirectory(desktop);
@@ -316,7 +331,7 @@ namespace FiredepartmentAPI.Controllers
 
             }
             catch (Exception ex) {
-
+                return Ok(ex.Message);
             }
 
 
@@ -334,6 +349,9 @@ namespace FiredepartmentAPI.Controllers
             items.ForEach(place => {
 
                 var alllist = place.PriorityList.Select(x => x.FireitemList).Aggregate((a, b) => (a.Concat(b).ToList()));
+                if (alllist.Count == 0) {
+                    return;
+                }
                 int row = alllist.Count % 3 == 0 ? alllist.Count / 3 : alllist.Count / 3 + 1;
                 Document Barcodedoc = new Document();
                 Table Barcodetable = Barcodedoc.AddSection().AddTable(true);
@@ -394,7 +412,12 @@ namespace FiredepartmentAPI.Controllers
 
 
             items.ForEach(place => {
-                builder.Attachments.Add(desktop + @"\" + place.PlaceName + ".docx");
+                if (System.IO.File.Exists(desktop + @"\" + place.PlaceName + ".docx")) {
+                    builder.Attachments.Add(desktop + @"\" + place.PlaceName + ".docx");
+                }
+
+
+
             });
             message.Body = builder.ToMessageBody();
             await provider.SmtpClient.SendAsync(message);
@@ -403,27 +426,35 @@ namespace FiredepartmentAPI.Controllers
 
 
 
-            return Ok("111");
+            return Ok(desktop);
 
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> editinfo([FromBody] Fireiteminput input)
+        [Authorize("API")]
+        public async Task<IActionResult> editinfo([FromBody] editinforecord input)
         {
 
-            var fireitem = Context.FireitemsTable.Find(input.ItemId);
+            var fireitem = Context.FireitemsTable.Find(input.itemid);
 
-            fireitem.ItemName = input.ItemName;
-            fireitem.StoreId = input.StoreId;
+            fireitem.ItemName = input.newname;
+            fireitem.StoreId = input.newstore;
 
-            int edit = await Context.SaveChangesAsync();
+            int edit =  await Context.SaveChangesAsync();
+
+            input.ChangeDate = DateTime.Now;
+
+            Context.EditinforecordTable.Add(input);
+
+
+            int editrecord = await Context.SaveChangesAsync();
+
             int inventorydelete = 0;
             int statusdelete = 0;
-            var originalplace = Context.PlaceTable.Include(x => x.PriorityList.Where(e => e.StoreId.Equals(fireitem.StoreId)));
-            var newplace = Context.PlaceTable.Include(x => x.PriorityList.Where(e => e.StoreId.Equals(input.StoreId)));
-
-            if (!originalplace.Equals(newplace)) {
+            var oldplaceid = Context.PriorityTable.Single(e => e.StoreId == input.oldstore).PlaceId;
+            var newplaceid = Context.PriorityTable.Single(e => e.StoreId == input.newstore).PlaceId;
+            if (oldplaceid != newplaceid) {
 
 
                 var inventoryrecord = Context.InventoryItemsTable.Where(x => x.ItemId.Equals(fireitem.ItemId)).ToList();
@@ -438,14 +469,20 @@ namespace FiredepartmentAPI.Controllers
             }
 
 
-            return Ok("編輯" + edit + "盤點刪除" + inventorydelete + "狀態刪除" + statusdelete);
+            return Ok("編輯" + edit + "盤點紀錄" + inventorydelete + "狀態" + statusdelete);
         }
 
 
         [HttpPost]
+        [Authorize("API")]
         public async Task<IActionResult> addplace([FromBody] PlaceModel input)
         {
 
+            var placename = Context.PlaceTable.Where(x => x.PlaceName.Equals(input.PlaceName)).FirstOrDefault();
+
+            if (placename != null) {
+                return Ok("此地點名稱已存在");
+            }
             var place = new PlaceModel {
                 PlaceName = input.PlaceName,
 
@@ -458,8 +495,45 @@ namespace FiredepartmentAPI.Controllers
             Context.PlaceTable.Add(place);
 
             int count = await Context.SaveChangesAsync();
+            if (count > 0) {
+                return Ok("成功新增");
+            }
+            else {
+                return Ok("新增失敗 請重新傳送");
+            }
 
-            return Ok(count);
+         
+
+        }
+
+        [HttpGet]
+        [Authorize("API")]
+        public IActionResult editinforecord()
+        {
+            var placeinfo = from x in Context.PriorityTable
+                         join
+                            y in Context.PlaceTable
+                                    on new { x.PlaceId }
+                                   equals new { y.PlaceId }
+                         select new { x.StoreId,y.PlaceName, x.SubArea };
+
+
+            var record = from x in Context.EditinforecordTable
+                         join y in placeinfo
+                         on new { con = x.oldstore }
+                         equals
+                         new { con = y.StoreId }
+                         join z in placeinfo
+                         on new { con = x.newstore }
+                         equals new { con = z.StoreId }
+
+                         select new { x.itemid, x.oldname, x.newname,oldplace = y.PlaceName,newplace= z.PlaceName,oldarea = z.SubArea,newarea= z.SubArea ,x.ChangeDate,x.UserId};
+
+
+
+            return Ok(record);
+
+
 
         }
     }

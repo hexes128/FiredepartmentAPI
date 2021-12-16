@@ -79,12 +79,13 @@ using Microsoft.EntityFrameworkCore;
 
                 result = userMgr.AddClaimsAsync(wunshuai, new Claim[]
                 {
-          new Claim(JwtClaimTypes.Name, "文率"),
-          new Claim(JwtClaimTypes.GivenName, "文率"),
-          new Claim(JwtClaimTypes.FamilyName, "鄭"),
-          new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
-          new Claim(JwtClaimTypes.Email,"hexes128@gmail.com"),
-               
+            new Claim(JwtClaimTypes.Name, "文率"),
+            new Claim(JwtClaimTypes.GivenName, "文率"),
+            new Claim(JwtClaimTypes.FamilyName, "鄭"),
+            new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
+            new Claim(JwtClaimTypes.Email,"hexes128@gmail.com"),
+
+
                 }).Result;
                 if (!result.Succeeded)
                 {
@@ -115,11 +116,11 @@ using Microsoft.EntityFrameworkCore;
 
                 result = userMgr.AddClaimsAsync(wunshuai2, new Claim[]
                 {
-          new Claim(JwtClaimTypes.Name, "文帥"),
-          new Claim(JwtClaimTypes.GivenName, "文帥"),
-          new Claim(JwtClaimTypes.FamilyName, "鄭"),
-          new Claim(JwtClaimTypes.WebSite, "http://bob.com"),
-          new Claim("location", "somewhere")
+            new Claim(JwtClaimTypes.Name, "文帥"),
+            new Claim(JwtClaimTypes.GivenName, "文帥"),
+            new Claim(JwtClaimTypes.FamilyName, "鄭"),
+            new Claim(JwtClaimTypes.WebSite, "http://bob.com"),
+            new Claim("location", "somewhere")
                 }).Result;
                 if (!result.Succeeded)
                 {
@@ -132,6 +133,148 @@ using Microsoft.EntityFrameworkCore;
             {
                 Log.Debug("文帥 already exists");
             }
+
+            var test1 = userMgr.FindByNameAsync("test1").Result;
+            if (test1 == null)
+            {
+                test1 = new IdentityUser
+                {
+                    UserName = "test1",
+                    Email = "maxsuper119@gmail.com",
+                    EmailConfirmed = true,
+                };
+                var result = userMgr.CreateAsync(test1, "Test1%").Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+
+                result = userMgr.AddClaimsAsync(test1, new Claim[]
+                {
+          new Claim(JwtClaimTypes.Name, "test1"),
+          new Claim(JwtClaimTypes.GivenName, "test1"),
+          new Claim(JwtClaimTypes.FamilyName, "test1"),
+          new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
+          new Claim(JwtClaimTypes.Email,"maxsuper119@gmail.com"),
+
+                }).Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+
+                Log.Debug("wunshuai created");
+            }
+            else
+            {
+                Log.Debug("wunshuai already exists");
+            }
+            var test2 = userMgr.FindByNameAsync("test2").Result;
+            if (test2 == null)
+            {
+                test2 = new IdentityUser
+                {
+                    UserName = "test2",
+                    Email = "AliceSmith@email.com",
+                    EmailConfirmed = true,
+                };
+                var result = userMgr.CreateAsync(test2, "Test2%").Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+
+                result = userMgr.AddClaimsAsync(test2, new Claim[]
+                {
+          new Claim(JwtClaimTypes.Name, "test2"),
+          new Claim(JwtClaimTypes.GivenName, "test2"),
+          new Claim(JwtClaimTypes.FamilyName, "test2"),
+          new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
+          new Claim(JwtClaimTypes.Email,"maxsuper119@gmail.com"),
+
+                }).Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+
+                Log.Debug("wunshuai created");
+            }
+            else
+            {
+                Log.Debug("wunshuai already exists");
+            }
+            var test3 = userMgr.FindByNameAsync("test3").Result;
+            if (test3 == null)
+            {
+                test3 = new IdentityUser
+                {
+                    UserName = "test3",
+                    Email = "AliceSmith@email.com",
+                    EmailConfirmed = true,
+                };
+                var result = userMgr.CreateAsync(test3, "Test3%").Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+
+                result = userMgr.AddClaimsAsync(test3, new Claim[]
+                {
+          new Claim(JwtClaimTypes.Name, "test3"),
+          new Claim(JwtClaimTypes.GivenName, "test3"),
+          new Claim(JwtClaimTypes.FamilyName, "test3"),
+          new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
+          new Claim(JwtClaimTypes.Email,"maxsuper119@gmail.com"),
+
+                }).Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+
+                Log.Debug("wunshuai created");
+            }
+            else
+            {
+                Log.Debug("wunshuai already exists");
+            }
+            var test4 = userMgr.FindByNameAsync("test4").Result;
+            if (test4 == null)
+            {
+                test4 = new IdentityUser
+                {
+                    UserName = "test4",
+                    Email = "AliceSmith@email.com",
+                    EmailConfirmed = true,
+                };
+                var result = userMgr.CreateAsync(test4, "Test4%").Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+
+                result = userMgr.AddClaimsAsync(test4, new Claim[]
+                {
+          new Claim(JwtClaimTypes.Name, "test4"),
+          new Claim(JwtClaimTypes.GivenName, "test4"),
+          new Claim(JwtClaimTypes.FamilyName, "test4"),
+          new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
+          new Claim(JwtClaimTypes.Email,"maxsuper119@gmail.com"),
+
+                }).Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+
+                Log.Debug("wunshuai created");
+            }
+            else
+            {
+                Log.Debug("wunshuai already exists");
+            }
+
         }
 
 

@@ -136,7 +136,8 @@ namespace IDS4
           PostLogoutRedirectUris = {"https://localhost:44327/signout-callback-oidc"},
           AllowOfflineAccess=true,
 
-          AllowedScopes = {    IdentityServerConstants.StandardScopes.Profile,
+          AllowedScopes = {   
+                         IdentityServerConstants.StandardScopes.Profile,
                          IdentityServerConstants.StandardScopes.Email,
                          IdentityServerConstants.StandardScopes.OpenId,
                          IdentityServerConstants.LocalApi.ScopeName ,
@@ -161,7 +162,7 @@ namespace IDS4
                          IdentityServerConstants.StandardScopes.OpenId,
                           IdentityServerConstants.StandardScopes.OfflineAccess,
                          IdentityServerConstants.LocalApi.ScopeName ,
-                IdentityServerConstants.StandardScopes.OfflineAccess,
+                     
                          "API",
 
                     },
