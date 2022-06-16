@@ -59,7 +59,7 @@ namespace FiredepartmentAPI.Migrations
                     b.Property<int>("PlaceId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EventId");
@@ -157,13 +157,10 @@ namespace FiredepartmentAPI.Migrations
                     b.Property<int>("PlaceId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Postscript")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("StatusCode")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("StatusChangId");
@@ -185,7 +182,7 @@ namespace FiredepartmentAPI.Migrations
                     b.Property<DateTime>("ChangeDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("itemid")
@@ -194,10 +191,16 @@ namespace FiredepartmentAPI.Migrations
                     b.Property<string>("newname")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("newpostscript")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("newstore")
                         .HasColumnType("int");
 
                     b.Property<string>("oldname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("oldpostscript")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("oldstore")
@@ -261,7 +264,7 @@ namespace FiredepartmentAPI.Migrations
             modelBuilder.Entity("FiredepartmentAPI.DbModels.StatusChangeModel", b =>
                 {
                     b.HasOne("FiredepartmentAPI.DbModels.FireitemModel", "FireitemRef")
-                        .WithMany("lendFixList")
+                        .WithMany("StatusChangeList")
                         .HasForeignKey("ItemId");
 
                     b.HasOne("FiredepartmentAPI.DbModels.PlaceModel", "PlaceRef")
@@ -279,7 +282,7 @@ namespace FiredepartmentAPI.Migrations
                 {
                     b.Navigation("InventoryItemList");
 
-                    b.Navigation("lendFixList");
+                    b.Navigation("StatusChangeList");
                 });
 
             modelBuilder.Entity("FiredepartmentAPI.DbModels.InventoryEventModel", b =>

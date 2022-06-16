@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\IDS4"
+    "\\FiredepartmentAPI",
+    "\\FiredepartmentAPI\\Controllers",
+    "\\FiredepartmentAPI\\Dbcontext",
+    "\\FiredepartmentAPI\\DbModels"
   ],
   "SelectedNode": "\\Firedepartment.sln",
   "PreviewInSolutionExplorer": false

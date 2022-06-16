@@ -216,3 +216,7 @@ C:\Users\Administrator\Desktop\Firedepartment\IDS4\bin\Release\net5.0\IdentitySe
 C:\Users\Administrator\Desktop\Firedepartment\IDS4\bin\Release\net5.0\IdentityServer4.KeyManagement.EntityFramework.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\bin\Release\net5.0\IdentityServer4.KeyManagement.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\bin\Release\net5.0\IdentityServer4.KeyManagement.EntityFramework.dll
+C:\Users\hexes128\source\repos\Firedepartment\IDS4\bin\Release\net5.0\Excel.dll
+C:\Users\hexes128\source\repos\Firedepartment\IDS4\bin\Release\net5.0\ExcelDataReader.dll
+C:\Users\hexes128\source\repos\Firedepartment\IDS4\bin\Release\net5.0\ExcelDataReader.DataSet.dll
+C:\Users\hexes128\source\repos\Firedepartment\IDS4\bin\Release\net5.0\Microsoft.Office.Interop.Excel.dll

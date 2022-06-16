@@ -141,6 +141,9 @@ C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\IDS4.runtimeconfig.json
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\IDS4.pdb
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\AutoMapper.dll
+C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\Excel.dll
+C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\ExcelDataReader.dll
+C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\ExcelDataReader.DataSet.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\IdentityModel.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\IdentityServer4.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\IdentityServer4.AspNetIdentity.dll
@@ -168,6 +171,7 @@ C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
+C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\Microsoft.Office.Interop.Excel.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\Serilog.dll
 C:\Users\hexes128\source\repos\Firedepartment\IDS4\obj\Release\net5.0\PubTmp\Out\Serilog.Sinks.Console.dll

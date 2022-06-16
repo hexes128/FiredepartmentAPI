@@ -31,10 +31,9 @@ namespace IDS4
         {
             var IdentityConnection = Configuration.GetConnectionString("IdentityConnection");
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
-            services.AddDbContext<ApplicationDbContext>(options =>options.UseSqlServer(IdentityConnection, opt => opt.MigrationsAssembly(migrationsAssembly)));
 
-         
-       
+
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(IdentityConnection, opt => opt.MigrationsAssembly(migrationsAssembly)));
             services.AddIdentity<IdentityUser, IdentityRole>(config =>
             {
                 config.Password.RequiredLength = 8;
@@ -45,48 +44,35 @@ namespace IDS4
                 config.SignIn.RequireConfirmedEmail = false;
             }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
-            services.AddIdentityServer(options =>
-            {
-
-
-                options.Discovery.CustomEntries.Add("localApi", "~/localapi");
-            })
-        .AddConfigurationStore(options =>
+            services.AddIdentityServer()
+         .AddConfigurationStore(options =>
          {
-             options.ConfigureDbContext = builder => builder.UseSqlServer(IdentityConnection,
-                 opt => opt.MigrationsAssembly(migrationsAssembly));
-         })
+             options.ConfigureDbContext = builder => builder.UseSqlServer(IdentityConnection,opt => opt.MigrationsAssembly(migrationsAssembly));
+         }).
 
-         .AddOperationalStore(options =>
+         AddOperationalStore(options =>
          {
-             options.ConfigureDbContext = builder => builder.UseSqlServer(IdentityConnection,
-                   opt => opt.MigrationsAssembly(migrationsAssembly));
+             options.ConfigureDbContext = builder => builder.UseSqlServer(IdentityConnection,opt => opt.MigrationsAssembly(migrationsAssembly));
              options.EnableTokenCleanup = true;
          })
            .AddAspNetIdentity<IdentityUser>().AddSigningKeyManagement(
                 option =>
                 {
-
                     option.Licensee = "DEMO";
-                    option.License = "eyJTb2xkRm9yIjowLjAsIktleVByZXNldCI6NiwiU2F2ZUtleSI6ZmFsc2UsIkxlZ2FjeUtleSI6ZmFsc2UsIlJlbmV3YWxTZW50VGltZSI6IjAwMDEtMDEtMDFUMDA6MDA6MDAiLCJhdXRoIjoiREVNTyIsImV4cCI6IjIwMjEtMTItMjhUMDE6MDA6MDMuNDU4ODE5NyswMDowMCIsImlhdCI6IjIwMjEtMTEtMjhUMDE6MDA6MDMiLCJvcmciOiJERU1PIiwiYXVkIjo1fQ==.KbSEd70Lc1h1+RXMh/ZouelsnIRgVuKLssyYs3qtKJ0GDvUWYup468GWMCbgom1hLF/ymfvX0auuo+U5M8wz5myeFgzF8+L4WMfOxTc/PcR1LLuuBibjG1ycggJRNKowri8lLmxYvKXf9c4ySvUHdXhlD/H6rJStw1R5ZeyWMqev+QtWR8YOuuwb8+Z7HqU1dV2Y2Yy0j8CQuvkbQgSGt9GHcY5FH/di67BsAU5TM9oKDACIRUiyUllJ3kKD88nQSp7y6ELUKoKztV4vFVcE6VjHsAh3onoAww3iq8bbtVjaseJ9bwYrX1eWY53AIVmpIlgQL2fS6YaFrOGuyWO7LA3DKwRy1jwgSgpTI6eifsINuMuKGBKb26a5uUKF+8qG9k+2Ap35vBug4cslN8vR6B4DjcNjuwtwKZ4tPegpR0H6qiy9NlYeCh9EotRaNEj20jKhLHwNuRssTt9XzXLuREv+QMF3f0tzlzVKCc1yt2EuQWnZU8ciMvRHfh9mUqhrga+LMtTcn8uNrLmiBELABnyduFajc/w4oY1KcUYsGqlqR/4Ek9CvsMJVy8Q/3P+5hievk8ESmJ+7NFhfRBCMJkTWIBJMVBlf01QQm4zvobw/1oS4T+2qS2hKOfQXx/yJ/9cT+zV+R03AgQJ5EtpNxqUYSPvOkJK33knNR+7Oltg=";
-
-
-                }
-                )
+                    option.License = "eyJTb2xkRm9yIjowLjAsIktleVByZXNldCI6NiwiU2F2ZUtleSI6ZmFsc2UsIkxlZ2FjeUtleSI6ZmFsc2UsIlJlbmV3YWxTZW50VGltZSI6IjAwMDEtMDEtMDFUMDA6MDA6MDAiLCJhdXRoIjoiREVNTyIsImV4cCI6IjIwMjItMDctMDVUMDE6MDA6MDEuODkzMDMxOCswMDowMCIsImlhdCI6IjIwMjItMDYtMDVUMDE6MDA6MDEiLCJvcmciOiJERU1PIiwiYXVkIjo1fQ==.Gx0JJjxpk6zRh/rWbup9SXy+sx8i4diCcw4dPXdA0o/CBj/yvEe/gSMY+Jut2hl6Wsl1UFv9lBxawU2S4hedaLq6Cgm5fgkVKWuXmIbote52ZAFOCgY3RySBmcXCoQONoJ37AyOnMpAFAxaXtBnQaFE8CUi+zMhhgq3kuMIn9jXKMOJtYRMdkukRL//4mSeVfLJOIAqg2Z8U7XIwmQId9WwY5jR4X6tiI6+ihtD5wbfM0LtIFXQ8YlzzqxKQQ4Q4OniHGGtWRKoYuhgftCKTJEth4sFL5gD4kee0NjMnwif6i5q6IAedCDkP3UICfgn/WJhM0+WWQB7N63FhPwp2ibDUrcRi0t3olHq4OqeqtxBWsHFToKm6EQzfZK4Bd0a1B1mbVB9Ig+KWzLKzrh6sRp31r5+OwMLOG1P1Uv+tzCYX/lGW7X0fAtGxggfa3b1t5eVQm/CK5EReVL4vqjwz/QlB6Xglm68W7535R3JbOEcVXmd5Mb7GoRVTlii6paOjr4vDpYxNymXNEPy/AfeEG8MmHW/jcZ3qTTChEYhc8pXdDwHW7Upcnah9YPoV4Uld+yb7LpG8OcHCjVnmcMHKorHZk0Tufnk6//Eakk5Ih9sVX+uzMPFtY6mhdl0M0GdG/ElnVSc1Cx4au3L5AmDwdQ/bgcofYs9Ma1OtCLPh60Y=";  
+                })
            .PersistKeysToDatabase(new DatabaseKeyManagementOptions
            {
 
                ConfigureDbContext = opt => opt.UseSqlServer(IdentityConnection)
            }).EnableInMemoryCaching();
-           //.AddDeveloperSigningCredential()
-           ;
-            
-            services.AddLocalApiAuthentication();
+
+ 
+
 
             services.ConfigureApplicationCookie(config =>
             {
                 config.Cookie.Name = "IdentityServer.Cookie";
-
             });
 
 
@@ -101,8 +87,8 @@ namespace IDS4
         {
             if (env.IsDevelopment())
             {
-             
-             
+
+
             }
             app.UseDeveloperExceptionPage();
             app.UseCookiePolicy(new CookiePolicyOptions()

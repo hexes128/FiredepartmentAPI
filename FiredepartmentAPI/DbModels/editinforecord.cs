@@ -7,21 +7,19 @@ using System.Threading.Tasks;
 
 namespace FiredepartmentAPI.DbModels
 {
-
+ 
     public class editinforecord
     {
         [Key]
-        public int editid { get; set; }
-
-        public string itemid { get; set; }
+        public int editid { get; set; } 
+        public string itemid { get; set; } 
         public string oldname { get; set; }
-        public string newname { get; set; }
-
-        public int oldstore { get; set; }
+        public string newname { get; set; }  
+        public int oldstore { get; set; } 
         public int newstore { get; set; }
-        public string UserId { get; set; }
-        public DateTime ChangeDate { get; set; }
-
-
+        public string oldpostscript { get; set; }
+        public string newpostscript { get; set; }
+        public string UserName { get; set; }
+        public DateTime ChangeDate { get; set; } 
     }
 }

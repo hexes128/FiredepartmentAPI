@@ -12,7 +12,7 @@ namespace FiredepartmentAPI.PostInputModles
         public string ItemName { get; set; }
         public string postscript { get; set; }
         public int StoreId { get; set; }
-        public string UserId { get; set; }
+        public string UserName { get; set; }
 
     }
 }

@@ -10,7 +10,7 @@ namespace FiredepartmentAPI.PostInputModles
     public class InventoryInput
     {
 
-        public string UserId { get; set; }
+        public string UserName { get; set; }
         public int PlaceId { get; set; }
 
         public List<InventoryItemModel> InventoryItemList { get; set; }

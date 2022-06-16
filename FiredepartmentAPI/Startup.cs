@@ -27,24 +27,26 @@ namespace FiredepartmentAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddMailKit(config => {
+                config.UseMailKit(Configuration.GetSection("Email").Get<MailKitOptions>());
+            });
+
             services.AddControllers();
-             //   .AddJsonOptions(x =>
-             //x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+       
            
             services.AddHttpClient();
             services.AddDbContext<FiredepartmentDbContext>(options =>
             {
-
                 options.UseSqlServer(Configuration.GetConnectionString("APIConnection"));
             });
 
             services.AddAuthentication("Bearer").AddJwtBearer(option => {
                 option.RequireHttpsMetadata = false;
 
-                option.Authority = "http://140.133.78.44:82";
+                option.Authority = "http://140.133.78.140:82";
 
                 option.TokenValidationParameters = new TokenValidationParameters {
 
@@ -52,11 +54,8 @@ namespace FiredepartmentAPI
                 };
 
             }
-
-
-
-
                 );
+
             services.AddAuthorization(option => {
 
                 option.AddPolicy("API", builder => {
@@ -66,12 +65,6 @@ namespace FiredepartmentAPI
                 });
 
             });
-
-
-            services.AddMailKit(config => {
-               config.UseMailKit(Configuration.GetSection("Email").Get<MailKitOptions>());
-            });
-            
 
 
         }

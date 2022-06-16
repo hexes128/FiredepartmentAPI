@@ -11,14 +11,12 @@ namespace FiredepartmentAPI.DbModels
     {
         [Key]
         public int EventId { get; set; }
-        public string UserId { get; set; }
+        public string UserName { get; set; }
         [JsonIgnore]
         public int PlaceId { get; set; }
+        public DateTime InventoryDate { get; set; }
         [JsonIgnore]
         public PlaceModel PlaceRef { get; set; }
-    
-        public DateTime InventoryDate { get; set; }
-
-        public IList<InventoryItemModel> InventoryItemList { get; set; }
+        public IList<InventoryItemModel> InventoryItemList { get; set; } 
     }
 }
